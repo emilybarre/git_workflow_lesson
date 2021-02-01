@@ -9,6 +9,7 @@ def interface():
 			return
 		elif choice == "1":
 			HDL_driver()
+			return
 
 def HDL_driver():
 	HDL_val = getdata()
