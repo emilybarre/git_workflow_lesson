@@ -16,7 +16,7 @@ def HDL_driver():
 	output(HDL_val,result)
 
 def getdata():
-	HDL = input("What is your HDL?")
+	HDL = input("\nWhat is your HDL?\n")
 	HDL = int(HDL)
 	return HDL
 
@@ -33,7 +33,7 @@ def analyzedata(HDL):
 	return result
 
 def output(HDL,result):
-	print("The HDL entered was {}".format(HDL))
+	print("\nThe HDL entered was {}".format(HDL))
 	print("This HDL level is {}".format(result))
 	
 interface()
