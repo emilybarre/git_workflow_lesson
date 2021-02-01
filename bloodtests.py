@@ -10,4 +10,14 @@ def interface():
 	elif choice == "1":
 		HDL_driver()
 
+def HDL_driver():
+	HDL_val = getdata()
+	result = analyzedata(HDL_val)
+	output(result)
+
+def getdata():
+	HDL = input("What is your HDL?")
+	HDL = int(HDL)
+	return HDL
+
 interface()
