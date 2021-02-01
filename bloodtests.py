@@ -5,10 +5,10 @@ def interface():
 		print("1 - HDL")
 		print("9 - Quit")
 		choice = input("Enter an option: ")
-	if choice == "9": 
-		return
-	elif choice == "1":
-		HDL_driver()
+		if choice == "9": 
+			return
+		elif choice == "1":
+			HDL_driver()
 
 def HDL_driver():
 	HDL_val = getdata()
@@ -20,7 +20,7 @@ def getdata():
 	HDL = int(HDL)
 	return HDL
 
-def analyzedata(HDL)
+def analyzedata(HDL):
 	if HDL >= 60: 
 		result = "Normal" 
 	elif 40 <= HDL < 60:
