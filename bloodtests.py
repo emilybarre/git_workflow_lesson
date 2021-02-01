@@ -20,4 +20,16 @@ def getdata():
 	HDL = int(HDL)
 	return HDL
 
+def analyzedata(HDL)
+	if HDL > 60: 
+		result = "Normal" 
+	elif 40<HDL<60:
+		result = "Borderline Low"
+	elif HDL < 40: 
+		result = "Low"
+	else:
+		result = "Error"
+		
+	return result
+	
 interface()
