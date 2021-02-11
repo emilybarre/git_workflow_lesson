@@ -13,10 +13,9 @@ def interface():
             test_driver("cholesterol")
         elif choice == "2":
             test_driver("LDL")
-            return
         elif choice == "1":
             test_driver("HDL")
-            return
+        return
 
 
 def test_driver(test):
@@ -26,7 +25,7 @@ def test_driver(test):
         test_result = analyze_HDL(test_num)
     elif test == "LDL":
         test_result = analyze_LDL(test_num)
-    elif test == "cholesterol"
+    elif test == "cholesterol":
         test_result = analyze_cholesterol(test_num)
     
     output(test,test_num,test_result)
@@ -61,6 +60,15 @@ def analyze_LDL(LDL):
         result = "Very High"
     else:
         result = "Error"
+    return result
+
+def analyze_cholesterol(cholesterol):
+    if cholesterol < 200:
+        result = "Normal"
+    elif 200 <= cholesterol < 240:
+        result = "Borderline High"
+    elif cholesterol >= 240:
+        result = "High"
     return result
 
 def output(test,test_num,test_result):
