@@ -9,30 +9,28 @@ def interface():
         if choice == "9":
             return
         if choice == "2":
-            LDL_driver()
-        if choice == "3":
-            
+            test_driver("LDL")
+            return
         elif choice == "1":
-            HDL_driver()
+            test_driver("HDL")
             return
 
 
-def HDL_driver():
-    HDL_val = getHDL()
-    LDL_val = getLDL()
-    resultHDL = analyze_HDL(HDL_val)
-    resultLDL = analyze_LDL(LDL_val)
-    output(HDL_val, LDL_val, resultHDL, resultLDL)
+def test_driver(test):
+    test_num = get_input(test)
+    
+    if test == "HDL":
+        test_result = analyze_HDL(test_num)
+    elif test == "LDL":
+        test_result = analyze_LDL(test_num)
+    
+    output(test,test_num,test_result)
 
-def LDL_driver():
-    LDL_val = getLDL()
-    resultLDL = analyze_LDL(LDL_val)
-    output(LDL_val, resultLDL)
 
-def getHDL():
-    HDL = input("\nWhat is your HDL?\n")
-    HDL = int(HDL)
-    return HDL
+def get_input(test):
+    test_num = input("\nWhat is your {}?\n".format(test))
+    test_num = int(test_num)
+    return test_num
 
 
 def analyze_HDL(HDL):
@@ -47,30 +45,22 @@ def analyze_HDL(HDL):
     return result
 
 
-def getLDL():
-    LDL = input("\nWhat is your LDL?\n")
-    LDL = int(LDL)
-    return LDL
-
-
 def analyze_LDL(LDL):
     if LDL < 130:
         result = "Normal"
-    elif 130 <= LDL < 159:
+    elif 130 <= LDL < 160:
         result = "Borderline High"
-    elif 160 <= LDL < 189:
+    elif 160 <= LDL < 190:
         result = "High"
-    elif 190 < LDL:
+    elif 190 <= LDL:
         result = "Very High"
     else:
         result = "Error"
     return result
 
-def output(HDL, LDL, result_HDL, result_LDL):
-    print("\nThe HDL entered was {}".format(HDL))
-    print("This HDL level is {}".format(result_HDL))
-    print("\nThe LDL entered was {}.".format(LDL))
-    print("This LDL level is {}".format(result_LDL))
+def output(test,test_num,test_result):
+    print("\nThe {} entered was {}".format(test, test_num))
+    print("This {} level is {}".format(test, test_result))
 
 
 if __name__ == "__main__":
