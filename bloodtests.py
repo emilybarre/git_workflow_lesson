@@ -21,7 +21,7 @@ def getdata():
 	HDL = int(HDL)
 	return HDL
 
-def analyzedata(HDL):
+def analyze_HDL(HDL):
 	if HDL >= 60: 
 		result = "Normal" 
 	elif 40 <= HDL < 60:
@@ -36,5 +36,6 @@ def analyzedata(HDL):
 def output(HDL,result):
 	print("\nThe HDL entered was {}".format(HDL))
 	print("This HDL level is {}".format(result))
-	
-interface()
+
+if __name__ == "__main__":
+    interface()
