@@ -4,11 +4,14 @@ def interface():
         print("\nOptions")
         print("1 - HDL")
         print("2 - LDL")
+        print("3 - Cholesterol")
         print("9 - Quit")
         choice = input("Enter an option: ")
         if choice == "9":
             return
-        if choice == "2":
+        elif choice == "3":
+            test_driver("cholesterol")
+        elif choice == "2":
             test_driver("LDL")
             return
         elif choice == "1":
@@ -23,6 +26,8 @@ def test_driver(test):
         test_result = analyze_HDL(test_num)
     elif test == "LDL":
         test_result = analyze_LDL(test_num)
+    elif test == "cholesterol"
+        test_result = analyze_cholesterol(test_num)
     
     output(test,test_num,test_result)
 
